@@ -1,0 +1,27 @@
+#include "../d04/ex07/ft_find_next_prime.c"
+#include "ft_putchar.c"
+#include "ft_putnbr.c"
+#include "ft_putstr.c"
+#include <time.h>
+#include <stdio.h>
+
+int main(void)
+{
+	clock_t start;
+	clock_t end;
+	long double cpu_time_used;
+	int prime;
+	int nb;
+
+	prime = 0;
+	nb = 2147483646;
+	start = clock();
+	prime = ft_find_next_prime(nb);
+	end = clock();
+	cpu_time_used = (long double)(end - start) / CLOCKS_PER_SEC;
+	
+	printf("The next prime after %d is %d.", nb, prime);
+	printf("\n");
+	printf("CPU Time: %Lf", cpu_time_used);
+	printf("\n");
+}
